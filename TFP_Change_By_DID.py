@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the dataset
-file_path = "/Users/katoyutaka/Desktop/soturon/csv_files/all_pref_DID_TFP.csv"
+file_path = "/csv_files/all_pref_DID_TFP.csv"
 data = pd.read_csv(file_path)
 
 # The percentage of increasing TFP
@@ -15,12 +15,12 @@ def calculate_rank_change(data, increase=percentage):
 
     # Loop through each prefecture
     for prefecture in data["prefecture"].unique():
-        pref_data = data[data["prefecture"] == prefecture]  # 特定の都道府県のデータを選択
-        changes = []  # 順位変動を格納するリスト
+        pref_data = data[data["prefecture"] == prefecture]  # Select data for the specific prefecture
+        changes = []  # List to store rank changes
 
         # Loop through each year
         for year in data["year"].unique():
-            year_data = data[data["year"] == year].copy()  # 特定の年度のデータを選択（コピーを作成）
+            year_data = data[data["year"] == year].copy()  # Select data for the specific year (make a copy)
 
             # Rank based on TFP
             year_data["rank"] = year_data["TFP"].rank(ascending=False, method="min")
