@@ -11,13 +11,13 @@ Follow these steps to run the analysis:
 1. **Build the Docker Image**:  
    Begin by building the Docker image for the project. Use the following command in your terminal:
     ```bash
-    docker build -t average_tfp_change .
+    docker build -t main .
     ```
 
 2. **Run the Docker Container**:  
 After successfully building the image, run the container with the following command:
     ```bash
-    docker run -it average_tfp_change
+    docker run -it main
     ```
     This will launch an interactive shell within the container.
 
